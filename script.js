@@ -157,19 +157,19 @@ if (canvas) {
     animate();
 }
 
-// ===== Dark/Light Mode Toggle =====
+// ===== Dark Mode Toggle =====
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
 // Check for saved preference
 const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
 }
 
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const isLight = document.body.classList.contains('light-mode');
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 }
